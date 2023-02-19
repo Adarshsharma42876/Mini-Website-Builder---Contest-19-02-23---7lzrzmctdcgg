@@ -4,8 +4,9 @@ const App = () => {
   const [charLimit, setCharLimit] = useState(50);
   const [inputText, setInputText] = useState("I change");
   const [color, setColor] = useState("black");
-  const [padding, setPadding] = useState(10);
+  const [padding, setPadding] = useState(32);
   return (
+    <form>
     <div id="main">
       Char Limit:-{" "}
       <input
@@ -52,6 +53,7 @@ const App = () => {
         {inputText}
       </div>
     </div>
+</form>
   );
 };
 
