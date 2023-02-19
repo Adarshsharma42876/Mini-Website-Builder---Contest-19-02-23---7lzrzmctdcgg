@@ -38,7 +38,7 @@ const App = () => {
           setPadding(e.target.value + "px");
         }}
         min={1}
-        max={}
+        max={32}
       />
       <div
         id="changing-div"
