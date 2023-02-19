@@ -10,6 +10,7 @@ const App = () => {
       Char Limit:-{" "}
       <input
         type="number"
+        id="charlimit-input"
         defaultValue={charLimit}
         onChange={(e) => {
           setCharLimit(e.target.value);
@@ -37,7 +38,7 @@ const App = () => {
           setPadding(e.target.value + "px");
         }}
         min={1}
-        max={32}
+        max={}
       />
       <div
         id="changing-div"
