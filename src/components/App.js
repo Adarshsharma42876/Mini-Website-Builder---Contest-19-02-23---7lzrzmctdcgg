@@ -1,25 +1,57 @@
-import './App.css';
-
-// import react from "React"
 import React, { useState } from "react";
-
-import logo from './logo.svg';
-
-function App() {
- const [data, setData] = useState("");
+import "../styles/App.css";
+const App = () => {
+  const [charLimit, setCharLimit] = useState(50);
+  const [inputText, setInputText] = useState("I change");
+  const [color, setColor] = useState("black");
+  const [padding, setPadding] = useState(10);
   return (
-    <div>
-     <form>
-       Char limit:-<input type="number" id="charlimit-input"></input>
-       <input type="text"  onChange= {(e) => setData(e.target.value)}></input>
-       <input type="color"></input>
-       <label for="file">
-       progress:</label>
-       <progress max="100">32%</progress>
-     </form>
-     <div className='result' style={{backgroundcolor: "red"}}>{data}</div>
+    <div id="main">
+      Char Limit:-{" "}
+      <input
+        type="number"
+        defaultValue={charLimit}
+        onChange={(e) => {
+          setCharLimit(e.target.value);
+        }}
+      />
+      <input
+        type="color"
+        defaultValue={color}
+        onChange={(e) => {
+          setColor(e.target.value);
+        }}
+      />
+      <input
+        type="text"
+        defaultValue={inputText}
+        maxLength={charLimit}
+        onChange={(e) => {
+          setInputText(e.target.value);
+        }}
+      />
+      <input
+        type="range"
+        defaultValue={padding}
+        onChange={(e) => {
+          setPadding(e.target.value + "px");
+        }}
+        min={1}
+        max={32}
+      />
+      <div
+        id="changing-div"
+        style={{
+          backgroundColor: color,
+          color: "white",
+          padding: padding,
+          margin: "20px 0px",
+        }}
+      >
+        {inputText}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
